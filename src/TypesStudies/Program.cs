@@ -32,6 +32,9 @@ namespace src
 
             Console.WriteLine($"ref bonus: {bonusRef}\nyearly Wage Ref: {yearlyWageRef}\n");
 
+            int average = CalculateAverageWage(1200, 1000, 500, 2500, 333);
+            Console.WriteLine($"Average: {average}");
+
         }
 
         static void WorkingWithDatetime()
@@ -68,6 +71,17 @@ namespace src
         {
             bonus = new Random().Next(1000);
             return monthWage * numberOfMonthWorked + bonus;
+        }
+        public static int CalculateAverageWage(params int[] wages)
+        {
+            int total = 0;
+            
+            foreach (var wage in wages)
+            {
+                total += wage;
+            }
+
+            return total / wages.Length;
         }
     }
 }
