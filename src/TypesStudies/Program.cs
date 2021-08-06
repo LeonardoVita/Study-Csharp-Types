@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using types.studies.Enums;
 
 namespace src
 {
@@ -9,10 +10,10 @@ namespace src
         {
             //WorkingWithDatetime();
 
-            int monthlyWage = 1234, 
+            int monthlyWage = 1234,
                 months = 12,
                 bonusRef = 0;
-            
+
             string multipleReturnsString;
             DateTime multipleReturnsDate;
 
@@ -35,6 +36,21 @@ namespace src
             int average = CalculateAverageWage(1200, 1000, 500, 2500, 333);
             Console.WriteLine($"Average: {average}");
 
+            //Utilizando Enums
+            usingEnums();
+        }
+
+        private static void usingEnums()
+        {
+            EmployeeTypeEnum employeeType = EmployeeTypeEnum.Manager;
+            StoreTypeEnum storeType = StoreTypeEnum.Seating;
+            int baseWage = 1000;
+
+            string teste = "Manager";
+
+            CalculateWageWithEnum(baseWage,(EmployeeTypeEnum) 2,(StoreTypeEnum) 10);
+
+            Console.WriteLine(employeeType.ToString() == teste);
         }
 
         static void WorkingWithDatetime()
@@ -83,5 +99,27 @@ namespace src
 
             return total / wages.Length;
         }
+
+        private static void CalculateWageWithEnum(int baseWage, EmployeeTypeEnum employee, StoreTypeEnum store)
+        {
+            int calculateWage = 0;
+
+            if (employee == EmployeeTypeEnum.Manager)
+            {
+                calculateWage = baseWage * 3;
+            }
+            else
+            {
+                calculateWage = baseWage * 2; 
+            }
+
+            if (store == StoreTypeEnum.FullPieRestaurant)
+                calculateWage += 500;
+            else
+                calculateWage += baseWage;
+
+            Console.WriteLine($"The Calculated Wage is {calculateWage}");
+        }
+            
     }
 }
