@@ -2,14 +2,41 @@
 using System.Globalization;
 using types.studies.Enums;
 
-namespace src
+namespace types.studies
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //WorkingWithDatetime();
+            //WorkingWithDatetime();           
+            //usingParams();
+            //usingEnums();
+            usingObjects();
+        }
 
+
+        static void WorkingWithDatetime()
+        {
+            DateTime initialDate = new DateTime(2021, 8, 15, 22, 55, 25);
+            var cultureInfo = new CultureInfo("en-US");
+            string dateString = "1995/01/21";
+            DateTime cultureDateTime = DateTime.Parse(dateString);
+
+            Console.WriteLine(initialDate);
+            Console.WriteLine($"To Long Date: {initialDate.ToLongDateString()}");
+            Console.WriteLine($"To Long Time: {initialDate.ToLongTimeString()}");
+
+            Console.WriteLine($"To Short Date: {initialDate.ToShortDateString()}");
+            Console.WriteLine($"To Short Time: {initialDate.ToShortTimeString()}");
+
+            Console.WriteLine($"===============================================");
+
+            Console.WriteLine($"Culture Date: {cultureDateTime.ToLongDateString()}");
+            Console.WriteLine($"Culture Date: {cultureInfo.Name}");
+
+        }
+        private static void usingParams()
+        {
             int monthlyWage = 1234,
                 months = 12,
                 bonusRef = 0;
@@ -35,11 +62,7 @@ namespace src
 
             int average = CalculateAverageWage(1200, 1000, 500, 2500, 333);
             Console.WriteLine($"Average: {average}");
-
-            //Utilizando Enums
-            usingEnums();
         }
-
         private static void usingEnums()
         {
             EmployeeTypeEnum employeeType = EmployeeTypeEnum.Manager;
@@ -52,26 +75,20 @@ namespace src
 
             Console.WriteLine(employeeType.ToString() == teste);
         }
-
-        static void WorkingWithDatetime()
+        private static void usingObjects()
         {
-            DateTime initialDate = new DateTime(2021, 8, 15, 22, 55, 25);
-            var cultureInfo = new CultureInfo("en-US");
-            string dateString = "1995/01/21";
-            DateTime cultureDateTime = DateTime.Parse(dateString);
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021,06,25), EmployeeTypeEnum.Manager, 8.6);
 
-            Console.WriteLine(initialDate);
-            Console.WriteLine($"To Long Date: {initialDate.ToLongDateString()}");
-            Console.WriteLine($"To Long Time: {initialDate.ToLongTimeString()}");
+            employee.DisplayEmployeeDetails();
+            employee.PerformWork();
+            employee.PerformWork();
+            employee.PerformWork();
+            employee.PerformWork();
+            employee.ReceiveWage();
 
-            Console.WriteLine($"To Short Date: {initialDate.ToShortDateString()}");
-            Console.WriteLine($"To Short Time: {initialDate.ToShortTimeString()}");
-
-            Console.WriteLine($"===============================================");
-
-            Console.WriteLine($"Culture Date: {cultureDateTime.ToLongDateString()}");
-            Console.WriteLine($"Culture Date: {cultureInfo.Name}");
+            Console.ReadLine();  
         }
+
         public static int CalculateYearlyWage(int monthWage, int numberOfMonthWorked)
         {
             return monthWage * numberOfMonthWorked;
