@@ -2,7 +2,7 @@
 
 namespace types.studies.HR
 {
-    public class Employee
+    public abstract class Employee
     {
         public string firstName;
         public string lastName;
@@ -57,5 +57,7 @@ namespace types.studies.HR
         {
             Console.WriteLine($"{firstName} {lastName} fez o checkin generico!");
         }
+
+        public abstract void AskForVacation();
     }
 }

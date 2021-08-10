@@ -24,5 +24,10 @@ namespace types.studies.HR
         {
             Console.WriteLine($"{firstName} {lastName} fez o checkin de gerente!");
         }
+
+        public override void AskForVacation()
+        {
+            Console.WriteLine($"{firstName} {lastName} pediu ferias de gerente!");
+        }
     }
 }

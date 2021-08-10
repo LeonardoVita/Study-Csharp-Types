@@ -136,16 +136,16 @@ namespace types.studies
         }
         public static void DailyWork()
         {
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            //Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
             Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
             Researcher researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
 
-            employee.PerformWork();
-            employee.PerformWork();
-            employee.PerformWork();
-            employee.PerformWork();
-            employee.ReceiveWage();
-            employee.DisplayEmployeeDetails();
+            //employee.PerformWork();
+            //employee.PerformWork();
+            //employee.PerformWork();
+            //employee.PerformWork();
+            //employee.ReceiveWage();
+            //employee.DisplayEmployeeDetails();
 
             Console.WriteLine();
 
@@ -170,11 +170,11 @@ namespace types.studies
         {
             Console.WriteLine("======= Virtual and Override sobrescreve o metodo =======\n");
 
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            //Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
             Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
             Researcher researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
 
-            employee.GiveBonus();
+            //employee.GiveBonus();
             manager.GiveBonus();
             researcher.GiveBonus();
 
@@ -184,11 +184,11 @@ namespace types.studies
         {
             Console.WriteLine("======= Virtual and Override All Employee considera sempre o metodo mais especifico =======\n");
 
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            //Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
             Employee manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
             Employee researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
 
-            employee.GiveBonus();
+            //employee.GiveBonus();
             manager.GiveBonus();
             researcher.GiveBonus();
 
@@ -198,11 +198,11 @@ namespace types.studies
         {
             Console.WriteLine("======= New Tag pode ocultar metodo da classe base =======\n");
 
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            //Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
             Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
             Researcher researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
 
-            employee.CheckIn();
+            //employee.CheckIn();
             manager.CheckIn();
             researcher.CheckIn();
 
@@ -212,11 +212,11 @@ namespace types.studies
         {
             Console.WriteLine("======= New Tag All Employee considera o metodo da classe base =======\n");
 
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            //Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
             Employee manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
             Employee researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
 
-            employee.CheckIn();
+            //employee.CheckIn();
             manager.CheckIn();
             researcher.CheckIn();
 
