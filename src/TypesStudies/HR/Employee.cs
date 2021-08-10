@@ -1,13 +1,8 @@
 ﻿using System;
-using types.studies.Enums;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace types.studies
+namespace types.studies.HR
 {
-    class Employee
+    public class Employee
     {
         public string firstName;
         public string lastName;
@@ -17,15 +12,12 @@ namespace types.studies
         public double hourlyrate;
         public DateTime birthDay;
 
-        public EmployeeTypeEnum employeeType;
-
-        public Employee(string fisrt, string last, string email, DateTime bd, EmployeeTypeEnum type, double rate)
+        public Employee(string first, string last, string email, DateTime bd, double rate)
         {
-            firstName = fisrt;
+            firstName = first;
             lastName = last;
             this.email = email;
             birthDay = bd;
-            employeeType = type;
             hourlyrate = rate;
         }
 

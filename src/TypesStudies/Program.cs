@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using types.studies.Enums;
+using types.studies.HR;
 
 namespace types.studies
 {
@@ -15,7 +16,7 @@ namespace types.studies
         }
 
 
-        static void WorkingWithDatetime()
+        private static void WorkingWithDatetime()
         {
             DateTime initialDate = new DateTime(2021, 8, 15, 22, 55, 25);
             var cultureInfo = new CultureInfo("en-US");
@@ -77,14 +78,19 @@ namespace types.studies
         }
         private static void usingObjects()
         {
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021,06,25), EmployeeTypeEnum.Manager, 8.6);
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021,06,25), 8.6);
+            Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
 
-            employee.DisplayEmployeeDetails();
             employee.PerformWork();
             employee.PerformWork();
             employee.PerformWork();
             employee.PerformWork();
             employee.ReceiveWage();
+            employee.DisplayEmployeeDetails();
+
+            manager.DisplayEmployeeDetails();
+            manager.AttendManagementMeeting();
+
 
             Console.ReadLine();  
         }
@@ -116,8 +122,7 @@ namespace types.studies
 
             return total / wages.Length;
         }
-
-        private static void CalculateWageWithEnum(int baseWage, EmployeeTypeEnum employee, StoreTypeEnum store)
+        public static void CalculateWageWithEnum(int baseWage, EmployeeTypeEnum employee, StoreTypeEnum store)
         {
             int calculateWage = 0;
 
