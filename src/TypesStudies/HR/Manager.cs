@@ -12,7 +12,17 @@ namespace types.studies.HR
         public void AttendManagementMeeting()
         {
             numberOfHoursWorked += 10;
-            Console.WriteLine($"Manager {firstName} {lastName} está atendendo a uma ligação longa de negocios");
+            Console.WriteLine($"O gerente {firstName} {lastName} está atendendo a uma ligação longa de negocios");
+        }
+
+        public override void GiveBonus()
+        {
+            Console.WriteLine($"{firstName} {lastName} Recebeu um bonus de gerente 250!");
+        }
+
+        public new void CheckIn()
+        {
+            Console.WriteLine($"{firstName} {lastName} fez o checkin de gerente!");
         }
     }
 }

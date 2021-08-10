@@ -78,21 +78,13 @@ namespace types.studies
         }
         private static void usingObjects()
         {
-            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021,06,25), 8.6);
-            Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
 
-            employee.PerformWork();
-            employee.PerformWork();
-            employee.PerformWork();
-            employee.PerformWork();
-            employee.ReceiveWage();
-            employee.DisplayEmployeeDetails();
+            DailyWork();
+            VirtualAndOverride1();
+            VirtualAndOverride2();
+            NewTag1();
+            NewTag2();
 
-            manager.DisplayEmployeeDetails();
-            manager.AttendManagementMeeting();
-
-
-            Console.ReadLine();  
         }
 
         public static int CalculateYearlyWage(int monthWage, int numberOfMonthWorked)
@@ -142,6 +134,94 @@ namespace types.studies
 
             Console.WriteLine($"The Calculated Wage is {calculateWage}");
         }
-            
+        public static void DailyWork()
+        {
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
+            Researcher researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
+
+            employee.PerformWork();
+            employee.PerformWork();
+            employee.PerformWork();
+            employee.PerformWork();
+            employee.ReceiveWage();
+            employee.DisplayEmployeeDetails();
+
+            Console.WriteLine();
+
+
+            manager.DisplayEmployeeDetails();
+            manager.AttendManagementMeeting();
+
+            Console.WriteLine();
+
+
+            researcher.PerformWork();
+            researcher.PerformWork();
+            researcher.PerformWork();
+            researcher.PerformWork();
+            researcher.ReceiveWage();
+            researcher.DisplayEmployeeDetails();
+
+            Console.WriteLine();
+
+        }         
+        public static void VirtualAndOverride1()
+        {
+            Console.WriteLine("======= Virtual and Override sobrescreve o metodo =======\n");
+
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
+            Researcher researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
+
+            employee.GiveBonus();
+            manager.GiveBonus();
+            researcher.GiveBonus();
+
+            Console.WriteLine();
+        }
+        public static void VirtualAndOverride2()
+        {
+            Console.WriteLine("======= Virtual and Override All Employee considera sempre o metodo mais especifico =======\n");
+
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            Employee manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
+            Employee researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
+
+            employee.GiveBonus();
+            manager.GiveBonus();
+            researcher.GiveBonus();
+
+            Console.WriteLine();
+        }
+        public static void NewTag1()
+        {
+            Console.WriteLine("======= New Tag pode ocultar metodo da classe base =======\n");
+
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            Manager manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
+            Researcher researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
+
+            employee.CheckIn();
+            manager.CheckIn();
+            researcher.CheckIn();
+
+            Console.WriteLine();
+        }
+        public static void NewTag2()
+        {
+            Console.WriteLine("======= New Tag All Employee considera o metodo da classe base =======\n");
+
+            Employee employee = new Employee("Leonardo", "vita", "leonardo@teste.com", new DateTime(2021, 06, 25), 8.6);
+            Employee manager = new Manager("Thiago", "Almeida", "tiaguin@teste.com", new DateTime(2021, 06, 15), 8.6);
+            Employee researcher = new Researcher("Clarissa", "Vita", "enois@teste.com", new DateTime(2021, 08, 08), 8.6);
+
+            employee.CheckIn();
+            manager.CheckIn();
+            researcher.CheckIn();
+
+            Console.WriteLine();
+        }
+
     }
 }

@@ -25,19 +25,19 @@ namespace types.studies.HR
         {
             numberOfHoursWorked++;
 
-            Console.WriteLine($"{firstName} {lastName} is now working!");
+            Console.WriteLine($"{firstName} {lastName} Está trabalhando agora!");
         }
 
         public void StopWork()
         {
-            Console.WriteLine($"{firstName} {lastName} has stopped working!");
+            Console.WriteLine($"{firstName} {lastName}Parou de trabalhar!");
         }
 
         public double ReceiveWage()
         {
             wage = numberOfHoursWorked * hourlyrate;
             
-            Console.WriteLine($"The wage for {numberOfHoursWorked} hours of work is {wage}.");
+            Console.WriteLine($"A remuneração para {numberOfHoursWorked} Horas de trabalho sera: {wage}.");
             numberOfHoursWorked = 0;
 
             return wage;
@@ -45,7 +45,17 @@ namespace types.studies.HR
 
         public void DisplayEmployeeDetails()
         {
-            Console.WriteLine($"First Name: {firstName}\nLast Name: {lastName}\nEmail: {email}");
+            Console.WriteLine($"Nome: {firstName}\nSobrenome: {lastName}\nEmail: {email}");
+        }
+
+        public virtual void GiveBonus()
+        {
+            Console.WriteLine($"{firstName} {lastName} Recebeu um bonus generico 100!");
+        }
+
+        public void CheckIn()
+        {
+            Console.WriteLine($"{firstName} {lastName} fez o checkin generico!");
         }
     }
 }
